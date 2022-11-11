@@ -14,7 +14,7 @@ async function captureScreenshot() {
 
     // Wait for suggest overlay to appear and click "show all results".
 
-    await page.waitFor(2000);
+    page.waitForNavigation({ timeout: 2000 })
 
     await page.screenshot({path: 'bnfscreenshot.png'});
   } catch (err) {
