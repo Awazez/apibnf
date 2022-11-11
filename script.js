@@ -2,6 +2,13 @@ const fs = require("fs");
 const puppeteer = require("puppeteer");
 const props = "Olivier Norek"
 
+
+function delay(time) {
+    return new Promise(function(resolve) { 
+        setTimeout(resolve, time)
+    });
+ }
+
 async function captureScreenshot() {
   let browser = null;
   try {
@@ -14,7 +21,9 @@ async function captureScreenshot() {
 
     // Wait for suggest overlay to appear and click "show all results".
 
-    page.waitForNavigation({ timeout: 2000 })
+    console.log('before waiting');
+await delay(4000);
+console.log('after waiting');
 
     await page.screenshot({path: 'bnfscreenshot.png'});
   } catch (err) {
