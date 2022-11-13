@@ -1,7 +1,5 @@
-const fs = require("fs");
 const puppeteer = require("puppeteer");
 const express = require("express")
-var convert = require('xml-js');
 const app = express()
 const PORT = 4000
 
